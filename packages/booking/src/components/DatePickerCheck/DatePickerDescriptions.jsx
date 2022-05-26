@@ -1,29 +1,35 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types'
 
-import css from "./DatePicker.module.scss";
+import css from './DatePicker.module.scss';
 
-const DatePickerDescriptions = ({ feePerNight, feePerService, taxes }) => {
+export const DatePickerDescriptions = ({ feePerNight, feePerService, taxes }) => {
   return (
-    <section className={css["date-picker-descriptions"]}>
-      <p className={css["descriptions"]}>
-        <span> {feePerNight} x 1 noche</span>
-        <span> Comisión por servicio</span>
-        <span> Impuestos y tarifas</span>
+    <section className={css['date-picker-descriptions']}>
+      <p className={css['descriptions']}>
+        <span className={css['span']}> {feePerNight} x 1 noche</span>
+        <span className={css['span']}> Comisión por servicio</span>
+        <span className={css['span']}> Impuestos y tarifas</span>
       </p>
-      <p className={css["amounts"]}>
-        <span>$ {feePerNight} </span>
-        <span>$ {feePerService} </span>
-        <span>$ {taxes} </span>
+      <p className={css['amounts']}>
+        <span className={css['span']}>$ {feePerNight} </span>
+        <span className={css['span']}>$ {feePerService} </span>
+        <span className={css['span']}>$ {taxes} </span>
       </p>
-      <p className={css["total-container"]}>
-        <b className={css["total-text"]}> Total </b>
-        <b className={css["total-amount"]}>
-          {" "}
-          $ {feePerNight + feePerService + taxes}{" "}
+      <p className={css['total-container']}>
+        <b className={css['total-text']}> Total </b>
+        <b className={css['total-amount']}>
+          {' '}
+          $ {feePerNight + feePerService + taxes}{' '}
         </b>
       </p>
     </section>
   );
 };
 
-export default DatePickerDescriptions;
+
+DatePickerDescriptions.propTypes = {
+  feePerService: PropTypes.number,
+  taxes: PropTypes.number,
+  feePerNight: PropTypes.number,
+}

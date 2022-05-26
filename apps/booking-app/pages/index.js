@@ -12,7 +12,8 @@ import {
   LoginButton,
   UserAccount,
   FavoriteCard,
-  Booking
+  Booking,
+  DatePicker
 } from '@booking-ui/shared';
 
 
@@ -38,6 +39,7 @@ export default function Home() {
         <UserAccount />
         <FavoriteCard />
         <Booking />
+        <DatePicker />
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>

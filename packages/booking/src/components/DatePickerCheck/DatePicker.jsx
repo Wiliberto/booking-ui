@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import css from "./DatePicker.module.scss";
-import DatePickerForm from "../DatePicker/DatePickerForm";
-import DatePickerButtonCheck from "./DatePickerButtonCheck";
+import css from './DatePicker.module.scss';
+import {DatePickerForm} from './DatePickerForm';
+import {DatePickerButtonCheck} from './DatePickerButtonCheck';
 
 
-const DatePicker = () => {
+export const DatePicker = () => {
   
   const feePerNight = 285040;
 
   return (
-    <div className={css["container"]}>
-      <p className={css["night-fee"]}>
+    <div className={css['container body']}>
+      <p className={css['night-fee']}>
         <b> ${feePerNight} COP</b> / noche
       </p>
       <DatePickerForm />
@@ -20,4 +20,4 @@ const DatePicker = () => {
   );
 };
 
-export default DatePicker;
+

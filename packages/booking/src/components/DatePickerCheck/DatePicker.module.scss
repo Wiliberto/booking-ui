@@ -1,17 +1,17 @@
-html {
+.body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-label {
+.label {
   align-self: flex-end;
   color: #1572A1;
   display: block;
   margin: 2px 3px 0 3px;
 }
 
-button {
+.button {
   border: 0;
   border-radius: 3em;
   background-color: #1572A1;
@@ -26,20 +26,20 @@ button {
   line-height: 27px;
 }
 
-input {
+.input {
   align-self: flex-start;
   border-style: none;
   width: 160px;
 }
 
-select {
+.select {
   background: none;
   border-style: none;
   margin: 0 3px 0 3px;
   width: 362px;
 }
 
-span {
+.span {
   display: block;
   line-height: 1.8;
 }
