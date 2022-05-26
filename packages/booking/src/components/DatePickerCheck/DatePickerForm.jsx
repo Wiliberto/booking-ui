@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import css from "./DatePicker.module.scss";
+import css from './DatePicker.module.scss';
 
-const DatePickerForm = () => {
-  const [checkinType, setCheckinType] = useState("text");
-  const [checkoutType, setCheckoutType] = useState("text");
+export const DatePickerForm = () => {
+  const [checkinType, setCheckinType] = useState('text');
+  const [checkoutType, setCheckoutType] = useState('text');
 
   const handleCheckinClick = (Type) => {
-    setCheckinType("date");
+    setCheckinType('date');
   };
 
   const handleCheckoutClick = (Type) => {
-    setCheckoutType("date");
+    setCheckoutType('date');
   };
   
   return (
-    <section className={css["date-picker-form"]}>
-      <div className={css["check-in-container"]}>
-        <label htmlFor="check-in">Llegada</label>
+    <section className={css['date-picker-form']}>
+      <div className={css['check-in-container']}>
+        <label className={css['label']} htmlFor="check-in">Llegada</label>
         <input
           onClick={handleCheckinClick}
           type={checkinType}
@@ -27,8 +27,8 @@ const DatePickerForm = () => {
         />
       </div>
 
-      <div className={css["checkout-container"]}>
-        <label htmlFor="checkout">Salida</label>
+      <div className={css['checkout-container']}>
+        <label className={css['label']} htmlFor="checkout">Salida</label>
         <input
           onClick={handleCheckoutClick}
           type={checkoutType}
@@ -38,8 +38,8 @@ const DatePickerForm = () => {
         />
       </div>
 
-      <div className={css["guest-counter-container"]}>
-        <label htmlFor="guests">Huéspedes</label>
+      <div className={css['guest-counter-container']}>
+        <label className={css['label']} htmlFor="guests">Huéspedes</label>
         <select name="guests" id="">
           <option value="1">1 Huésped</option>
           <option value="2">2 Huéspedes</option>
@@ -57,4 +57,3 @@ const DatePickerForm = () => {
   );
 };
 
-export default DatePickerForm;

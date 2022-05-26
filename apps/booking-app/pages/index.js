@@ -2,10 +2,11 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import {
   AdminPanel,
   Authentication,
+  LoginButton,
+  UserAccount,
+  FavoriteCard,
   Booking,
-  Geolocation, MessagingSystem,
-  Places,
-  UserAccount
+  DatePicker
 } from '@booking-ui/shared';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -43,11 +44,24 @@ export default function Home() {
               <code className={styles.code}>pages/index.js</code>
             </p>
 
-            <div className={styles.grid}>
-              <a href="https://nextjs.org/docs" className={styles.card}>
-                <h2>Documentation &rarr;</h2>
-                <p>Find in-depth information about Next.js features and API.</p>
-              </a>
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        </h1>
+        <Places />
+        <Geolocation />
+        <MessagingSystem />
+        <AdminPanel />
+        <Authentication />
+        <LoginButton label="Not login" />
+        <UserAccount />
+        <FavoriteCard />
+        <Booking />
+        <DatePicker />
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
 
               <a href="https://nextjs.org/learn" className={styles.card}>
                 <h2>Learn &rarr;</h2>
