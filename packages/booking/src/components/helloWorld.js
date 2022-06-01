@@ -1,5 +1,12 @@
 import React from 'react';
+import { BookingContext } from './BookingContext';
+
+import DatePicker from './DatePickerCheck/DatePicker';
 
 export const Booking = () => {
-  return <h1>Hello from Booking</h1>;
+  return (
+    <BookingContext.Provider value={{}}>
+      <DatePicker />
+    </BookingContext.Provider>
+  );
 };
