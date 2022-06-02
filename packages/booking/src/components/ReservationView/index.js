@@ -9,9 +9,9 @@ import '../../assets/styles/Booking.scss';
 export const Reservation = () => {
   return (
     <section className="booking">
-      <Header />
+      {/* <Header /> */}
       <Data />
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 };
