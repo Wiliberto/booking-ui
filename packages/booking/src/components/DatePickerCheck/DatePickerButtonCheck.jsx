@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'
-import {DatePickerDescriptions} from './DatePickerDescriptions';
+import PropTypes from 'prop-types';
+import { DatePickerDescriptions } from './DatePickerDescriptions';
 
-import css from './DatePicker.module.scss'
+import css from './DatePicker.module.scss';
 
-export const DatePickerButtonCheck = ({ feePerService, taxes, feePerNight }) => {
+export const DatePickerButtonCheck = ({
+  feePerService,
+  taxes,
+  feePerNight,
+}) => {
   // use a hook state to change the text on the button
   const [buttonText, setButtonText] = useState('Comprobar disponibilidad');
 
@@ -13,20 +17,32 @@ export const DatePickerButtonCheck = ({ feePerService, taxes, feePerNight }) => 
     setButtonText('Comprobando');
     setTimeout(() => {
       setButtonText(text);
-    }, 4000);
+    }, 1500);
   };
-  console.log(feePerService)
+
   return (
     <>
-      <button onClick={() => changeText('Reservar')}
-      className={css['button']}>{buttonText}</button>
       {buttonText === 'Reservar' ? (
-        <DatePickerDescriptions
-          feePerNight={feePerNight}
-          feePerService={feePerService}
-          taxes={taxes}
-        />
-      ) : null}
+        <>
+          <button
+            className={css['button']}
+          >
+            {buttonText}
+          </button>
+          <DatePickerDescriptions
+            feePerNight={feePerNight}
+            feePerService={feePerService}
+            taxes={taxes}
+          />
+        </>
+      ) : (
+        <button
+          onClick={() => changeText('Reservar')}
+          className={css['button']}
+        >
+          {buttonText}
+        </button>
+      )}
     </>
   );
 };
@@ -35,6 +51,4 @@ DatePickerButtonCheck.propTypes = {
   feePerService: PropTypes.number,
   taxes: PropTypes.number,
   feePerNight: PropTypes.number,
-}
-
-
+};

@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import '../../assets/styles/Card.scss';
+
 
 const Card = ({
   TextImg = 'New Loft near Parque de los Pies Descalsos',
@@ -35,3 +37,9 @@ const Card = ({
 };
 
 export default Card;
+
+Card.propTypes = {
+  TextImg: PropTypes.string,
+  HeaderDetails: PropTypes.string,
+  Total: PropTypes.array,
+}

@@ -61,5 +61,8 @@
       "\\.(styl|css)": "<rootDir>/__mocks__/styleMock.js"
     },
     "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "moment": "^2.29.3"
   }
 }

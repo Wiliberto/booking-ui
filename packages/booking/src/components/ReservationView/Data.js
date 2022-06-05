@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // Components
 import Title from './Title';
 import TravelInformation from './TravelInformation';
@@ -11,18 +11,26 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import '../../assets/styles/Data.scss';
 import '../../assets/styles/Card.scss';
 
+import { BookingContext } from '../BookingContext';
+
 // Card information
 const imgOne = 'https://maidtocleanboise.com/files/2020/01/dl01kitchen.jpg';
 
-const data = [
-  { detail: '$285.040 x 1 noche', value: '$285.040' },
-  { detail: 'Comisión por servicio', value: '$44.000' },
-  { detail: 'Impuestos y tarifas', value: '$20.000' },
-];
 
-const total = [{ detail: 'Total', value: '$349.040' }];
+
 
 const Data = () => {
+
+  const {place} = useContext(BookingContext)
+  const {feePerNight, feePerService, taxes, days} = place
+
+  const data = [
+    { detail: `${feePerNight} x ${days} noche`, value: `$${(feePerNight * days)}` },
+    { detail: 'Comisión por servicio', value: `$${feePerService}` },
+    { detail: 'Impuestos y tarifas', value: `$${taxes}` },
+  ];
+
+  const total = [{ detail: 'Total', value: `$${(feePerNight * days) + feePerService + taxes}` }];
   return (
     <section className="data">
       <div className="data__booking">
